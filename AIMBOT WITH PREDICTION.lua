@@ -36,7 +36,7 @@ local queueonteleport = queue_on_teleport or syn.queue_on_teleport
 Environment.Settings = {
 	SendNotifications = true,
 	SaveSettings = true, -- Re-execute upon changing
-	ReloadOnTeleport = false,
+	ReloadOnTeleport = true,
 	Enabled = true,
 	TeamCheck = false,
 	AliveCheck = true,
@@ -444,7 +444,7 @@ end
 
 if Environment.Settings.ReloadOnTeleport then
 	if queueonteleport then
-		queueonteleport(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V2/main/Resources/Scripts/Main.lua"))
+		queueonteleport(game:HttpGet("https://raw.githubusercontent.com/RelkzzRebranded/agogogogos/main/AIMBOT%20WITH%20PREDICTION.lua"))
 	else
 		SendNotification(Title, "Your exploit does not support \"syn.queue_on_teleport()\"")
 	end
