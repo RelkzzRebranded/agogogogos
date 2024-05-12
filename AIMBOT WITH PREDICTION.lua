@@ -22,7 +22,7 @@ local Camera = game:GetService("Workspace").CurrentCamera
 --// Variables
 
 local LocalPlayer = Players.LocalPlayer
-local Title = "MODIFIED AIMBOT|BRICKMANE"
+local Title = "Exunys Developer"
 local FileNames = {"Aimbot", "Configuration.json", "Drawing.json"}
 local Typing, Running, Animation, RequiredDistance, ServiceConnections = false, false, nil, 2000, {}
 
@@ -36,7 +36,7 @@ local queueonteleport = queue_on_teleport or syn.queue_on_teleport
 Environment.Settings = {
 	SendNotifications = true,
 	SaveSettings = true, -- Re-execute upon changing
-	ReloadOnTeleport = true,
+	ReloadOnTeleport = false,
 	Enabled = true,
 	TeamCheck = false,
 	AliveCheck = true,
@@ -298,7 +298,7 @@ local function Load()
 
 				local attribute_velocity = CHEAT_CLIENT:get_bullet_atribute("MuzzleVelocity")
      			local attribute_drop = CHEAT_CLIENT:get_bullet_atribute("ProjectileDrop")
-       			local target_part = Environment.Locked and Environment.Locked.Character:FindFirstChild("Head")
+       			local target_part = Environment.Locked and Environment.Locked.Character:FindFirstChild(Environment.Settings.LockPart)
 
 				if attribute_velocity and attribute_drop and target_part then
 					if Environment.Settings.Sensitivity > 0 then
@@ -444,7 +444,7 @@ end
 
 if Environment.Settings.ReloadOnTeleport then
 	if queueonteleport then
-		queueonteleport(game:HttpGet("https://raw.githubusercontent.com/RelkzzRebranded/agogogogos/main/AIMBOT%20WITH%20PREDICTION.lua"))
+		queueonteleport(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V2/main/Resources/Scripts/Main.lua"))
 	else
 		SendNotification(Title, "Your exploit does not support \"syn.queue_on_teleport()\"")
 	end
