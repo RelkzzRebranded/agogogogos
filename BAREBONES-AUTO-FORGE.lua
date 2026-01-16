@@ -30,18 +30,7 @@ local MiniReplacement = function(...)
 end
 
 -- Math 
-local function nearlyEqual(a, b, tolerance)
-	return math.abs(a - b) <= tolerance
-end
-
-local function UDimNearlyEqual(a, b, tolerance)
-	return nearlyEqual(a.Scale, b.Scale, tolerance)
-end
-
-local function UDim2NearlyEqual(a, b, tolerance)
-	return UDimNearlyEqual(a.X, b.X, tolerance)
-		and UDimNearlyEqual(a.Y, b.Y, tolerance)
-end
+-- those mfs werent doin anything so i removed them, fuck them anyways
 
 -- Manager
 
