@@ -26,7 +26,12 @@ local OldPour
 -- Replacement functions for hooks
 
 local MiniReplacement = function(...)
-	return workspace:GetServerTimeNow()
+	local args = {...}
+	local data = args[2]
+	local start = workspace:GetServerTimeNow() - data.StartTime
+	task.wait(data.RequiredTime)
+	-- goated guy for telling me how they managed to make it 100% everytime
+	return workspace:GetServerTimeNow() - start - task.wait() 
 end
 
 -- Math 
