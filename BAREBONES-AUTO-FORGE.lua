@@ -108,10 +108,6 @@ Debris.ChildAdded:Connect(function(instance)
 	end
 end)
 
-local last = 0
 RunService.RenderStepped:Connect(function()
-	if tick() - last < 1/30 then return end
-	last = tick()
 	OSUManager:Pulse()
 end)
-
